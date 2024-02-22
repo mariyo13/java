@@ -57,4 +57,62 @@ public class Array {
         }
         return -1;
     }
+    //rotate right
+    public static int[] rotateRight(int [] nums ,int n){
+        for(int i=0; i<n; i++){
+            int temp=nums[nums.length-1];
+            for(int j=nums.length-1; j>0; j--){
+                nums[j]=nums[j-1];
+            }
+            nums[0]=temp;
+        }
+        return nums;
+    }
+    //rotate light
+    public static int [] rotateLeft(int [] nums ,int n){
+        for(int i=0; i<n; i++){
+            int temp = nums[0];
+            for(int j=0; j<nums.length-1; j++ ){
+                nums[j]=nums[j+1];
+            }
+            nums[nums.length-1]=temp;
+        }
+        return nums;
+    }
+    //to find  maximum in array
+    public static int toFindMax(int[] nums){
+        int ans=nums[0];
+        for(int i=1 ; i<nums.length; i++){
+            if(ans < nums[i]){
+                ans=nums[i];
+            }
+        }
+        return ans;
+    }
+    // to find the minimun value in array
+    public static int toFindMin(int [] nums){
+        int ans=nums[0];
+        for(int i=1;i<nums.length; i++){
+   if(ans>nums[i])
+   {
+    ans=nums[i];
+   }
+        }
+        return ans;
+    }
+   // moving  all negative number
+   public static int [] movingNegativeNumber(int [] nums){
+   for(int i=0 ; i<nums.length-1; i++){
+    for(int j=i+1; j<nums.length; j++){
+        if(nums[j]<0 && i!= j){
+         int temp=nums[i];
+         nums[i]=nums[j];
+         nums[j]=temp;   
+        }
+
+    }
+
+   }
+   return nums;
+   }
 }
