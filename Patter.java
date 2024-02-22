@@ -2,11 +2,7 @@ package Manu;
 
 public class Patter {
     public static void main(String[] args) {
-//        pattern2(5,5);
-//        pattern3(5,5);
-//        pattern4(5,5);
-//patter5(5,5);
-//pattern6(5,5);
+pattern6(5,5);
         patern8(5);
         diamond(5);
 
@@ -78,23 +74,7 @@ public class Patter {
             System.out.println();
         }
     }
-//    public  static  void  pattern7(int n,int m){
-//        int j=0;
-//        for(int i=0; i<n; i++){
-//            for( j=0; j<=i; j++){
-//                System.out.print("#");
-//            }
-//            for(int k=j; k<m; k++){
-//                System.out.print("*");
-//            }
-//            for(int k=0; k<m-i; k++){
-//                System.out.print("&");
-//            }
-////            for(int k=)
-//            System.out.println();
-//        }
-//        return;
-//    }
+
     public  static  void patern8(int m){
         for(int i=0; i<m; i++){
             for(int j=0; j<m-i; j++){
