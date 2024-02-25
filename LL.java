@@ -87,5 +87,60 @@ public class LL  {
         pev.next=null;
         return pev.nums;
     }
+     // iterative search in ll
+    public  int searchLl(int target){
+        if (head == null){
+            return -1;
+        }
+        Node temp=head;
+        while (temp != null){
+            if(temp.nums == target){
+                return  temp.nums;
+            }
+            temp=temp.next;
+        }
+        return  -1;
+    }
+    // reversing  the  ll
+    public void reverseLinkList(){
+        Node prev=null;
+        Node curr=head;
+        Node next=head;
+        while(curr !=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+
+
+        }
+        head=prev;
+    }
+    public  int sizeLl(){
+        int size=0;
+        Node temp=head;
+        while (temp != null){
+            temp=temp.next;
+            size+=1;
+        }
+        return size;
+    }
+
+    // removing the nth node from the end
+     public  void removingNThNode(int n){
+        if(sizeLl() == n){
+            head =head.next;
+        return;
+        }
+        int size=sizeLl() -n;
+        int i=1;
+        Node prev =head;
+        while (i<size && prev != null){
+            prev=prev.next;
+            i+=1;
+        }
+        prev.next=prev.next.next;
+        return;
+     }
 
 }
