@@ -142,5 +142,42 @@ public class LL  {
         prev.next=prev.next.next;
         return;
      }
+     public  Node toFindMid(){
+        if(head ==null){
+            return null;
+        }
+        Node slow=head;
+        Node fast =head;
+        while (fast != null && fast.next != null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+     }
+     // check wheather  ll is polindrem are not
+    public  boolean isPolindem(){
+        Node mid=toFindMid();
+        reverseLinkList(mid);
+        System.out.println(mid.nums);
+        return false;
+    }
+    // detection of  cyclic in the  ll
+    public  boolean  isCyclic(){
+        if(head == null){
+            return  false;
+        }
+        Node slow =head;
+        Node fast = head;
+
+            while (fast == null || fast.next == null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(fast == slow){
+                return  true;
+            }
+        }
+        return false;
+    }
+  }
 
 }
